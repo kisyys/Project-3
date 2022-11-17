@@ -1,12 +1,18 @@
+body {
+    background: black;
+}
+
 #canvas1 {
     position: absolute;
+    border: 3px solid white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 700px;
 }
-.controls {
+
+/* .controls {
     position: absolute;
     z-index: 10;
     top: 10px;
@@ -15,4 +21,4 @@
 }
 .controls, select, option {
     font-size: 25px;
-}
+} */
