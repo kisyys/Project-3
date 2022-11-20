@@ -72,7 +72,7 @@ animationStates.forEach((state,index) =>  {
     }
     spriteAnimations[state.name] = frames;
 });
-console.log(spriteAnimations);
+//console.log(spriteAnimations);
 
 animate = () => {
     ctx.clearRect(0,0, CANVAS_WIDTH,CANVAS_HEIGHT);
@@ -84,8 +84,6 @@ animate = () => {
         if(frameX<6) frameX++;
         else frameX = 0;
     }
-    
-
     gameFrame++;
     requestAnimationFrame(animate);
 }
