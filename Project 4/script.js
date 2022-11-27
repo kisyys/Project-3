@@ -9,8 +9,8 @@ class Explosion {
     constructor(x,y) {
         this.spriteWidth = 200;
         this.spriteHeight = 179;
-        this.width = this.spriteWidth * 0,7;
-        this.height = this.spriteHeight * 0,7;
+        this.width = this.spriteWidth * 0.7;
+        this.height = this.spriteHeight * 0.7;
         this.x = x - this.width/2;
         this.y = y - this.height/2;
         this.image = new Image();
@@ -20,7 +20,7 @@ class Explosion {
     }
     update() {
         this.timer++;
-        if(this.timer % 10 === 0) {
+        if(this.timer % 10 == 0) {
             this.frame++;
         }  
     }
@@ -33,7 +33,6 @@ this.addEventListener("click", function(e){
     let positionX = e.x - canvasPosition.left;
     let positionY = e.y - canvasPosition.top;
     explosions.push(new Explosion(positionX,positionY));
-    console.log(explosions)
 });
 
 function animate() {
@@ -41,6 +40,10 @@ function animate() {
     for(let i = 0; i<explosions.length;i++) {
         explosions[i].update();
         explosions[i].draw();
+        if(explosions[i].frame >5) {
+            explosions.splice(i,1);
+            i--;
+        }
     }
     requestAnimationFrame(animate);
 }
