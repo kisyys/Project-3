@@ -1,8 +1,12 @@
 /** @type {HTMLCanvasElement} */
+
+// Canvas attributes
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+// CollisionCanvas attributes
 const collisionCanvas = document.getElementById("collisionCanvas");
 const collisionCtx = collisionCanvas.getContext("2d");
 collisionCanvas.width = window.innerWidth;
@@ -17,6 +21,7 @@ let ravenInterval = 500;
 let lastTime = 0;
 let ravens = [];
 
+// Creating Raven class
 class Raven {
     constructor() {
         this.spriteWidth = 271;
@@ -65,7 +70,10 @@ class Raven {
         ctx.drawImage(this.image, this.frame * this.spriteWidth, 0, this.spriteWidth, this.spiteHeight, this.x, this.y, this.width, this.height);
     }
 }
+
 let explosions = [];
+
+// Creating Explosion class
 class Explosion {
     constructor(x, y, size) {
         this.image = new Image();
@@ -97,6 +105,8 @@ class Explosion {
 }
 
 let particles = [];
+
+// Creating Particle class
 class Particle {
     constructor(x, y, size, color) {
         this.size = size;
@@ -154,6 +164,7 @@ window.addEventListener("click", function(e) {
     });
 });
 
+// Creating animation
 animate = (timestamp) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     collisionCtx.clearRect(0, 0, canvas.width, canvas.height);

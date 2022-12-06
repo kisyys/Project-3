@@ -1,4 +1,6 @@
 /** @type {HTMLCanvasElement} */
+
+// Canvas attributes
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = 500;
@@ -6,6 +8,7 @@ canvas.height = 700;
 const explosions = [];
 let canvasPosition = canvas.getBoundingClientRect();
 
+// Creating Explosion class
 class Explosion {
     constructor(x,y) {
         this.spriteWidth = 200;
@@ -54,6 +57,7 @@ createAnimation = (e) => {
     explosions.push(new Explosion(positionX,positionY));
 }
 
+// Creating animation
 animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for(let i = 0; i<explosions.length;i++) {

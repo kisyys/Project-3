@@ -1,4 +1,6 @@
 /** @type {HTMLCanvasElement} */
+
+// Canvas attributes
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 500;
@@ -8,6 +10,8 @@ const enemiesArray =[];
 
 let gameFrame = 0;
 
+
+// Creating Enemy class
 class Enemy {
     constructor() {
         this.image = new Image();
@@ -45,6 +49,7 @@ for(let i = 0; i<numberOffEnemies; i++) {
     enemiesArray.push(new Enemy());
 }
 
+// Creating animation
 animate = () => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     enemiesArray.forEach(enemy => {
