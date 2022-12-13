@@ -11,13 +11,11 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 600;
 const CANVAS_HEIGHT = canvas.height = 600;
 
-// Player attributes
+// Animation attributes
 const playerImage = new Image();
 playerImage.src="shadow_dog.png";
 const spriteWidth = 575;
 const spriteHeight = 523;
-
-// Animation attributes
 let gameFrame = 0;
 const staggerFrames = 5;
 const spriteAnimations = [];
