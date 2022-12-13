@@ -48,10 +48,6 @@ this.addEventListener("click", function(e){
     createAnimation(e);
 });
 
-// this.addEventListener("mousemove", function(e){
-//     createAnimation(e);
-// });
-
 // Creating explosions with mouse click even listener and adding them to array
 createAnimation = (e) => {
     let positionX = e.x - canvasPosition.left;
