@@ -5,10 +5,10 @@ const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = 500;
 canvas.height = 700;
-const explosions = [];
 let canvasPosition = canvas.getBoundingClientRect();
 
-// Creating Explosion class
+// Creating Explosion class and array
+const explosions = [];
 class Explosion {
     constructor(x,y) {
         this.spriteWidth = 200;
@@ -43,6 +43,7 @@ class Explosion {
     }
 }
 
+// Creating Event Listener for mouse clicking
 this.addEventListener("click", function(e){
     createAnimation(e);
 });
@@ -51,6 +52,7 @@ this.addEventListener("click", function(e){
 //     createAnimation(e);
 // });
 
+// Creating explosions with mouse click even listener and adding them to array
 createAnimation = (e) => {
     let positionX = e.x - canvasPosition.left;
     let positionY = e.y - canvasPosition.top;

@@ -5,13 +5,13 @@ const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 500;
 const CANVAS_HEIGHT = canvas.height = 1000;
-const numberOffEnemies = 200;
-const enemiesArray =[];
 
+// Other attributes
+const numberOffEnemies = 200;
 let gameFrame = 0;
 
-
-// Creating Enemy class
+// Creating Enemy class and array
+const enemiesArray =[];
 class Enemy {
     constructor() {
         this.image = new Image();
@@ -45,6 +45,7 @@ class Enemy {
     }
 }
 
+// Creating and adding enemies to array
 for(let i = 0; i<numberOffEnemies; i++) {
     enemiesArray.push(new Enemy());
 }

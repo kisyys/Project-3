@@ -12,16 +12,16 @@ const collisionCtx = collisionCanvas.getContext("2d");
 collisionCanvas.width = window.innerWidth;
 collisionCanvas.height = window.innerHeight;
 
+// Other attributes
 let score = 0;
 let GameOver = false;
 ctx.font = "50px Impact";
-
 let timeToNextRave = 0;
 let ravenInterval = 500;
 let lastTime = 0;
-let ravens = [];
 
-// Creating Raven class
+// Creating Raven class and array
+let ravens = [];
 class Raven {
     constructor() {
         this.spriteWidth = 271;
@@ -71,9 +71,8 @@ class Raven {
     }
 }
 
+// Creating Explosion class and array
 let explosions = [];
-
-// Creating Explosion class
 class Explosion {
     constructor(x, y, size) {
         this.image = new Image();
@@ -104,9 +103,8 @@ class Explosion {
     }
 }
 
+// Creating Particle class and array
 let particles = [];
-
-// Creating Particle class
 class Particle {
     constructor(x, y, size, color) {
         this.size = size;
@@ -134,6 +132,7 @@ class Particle {
     }
 }
 
+// Creating score counter
 drawScore = () => {
     ctx.fillStyle = "black";
     ctx.fillText("Score: " + score, 50, 75);
@@ -141,6 +140,7 @@ drawScore = () => {
     ctx.fillText("Score: " + score, 55, 80);
 }
 
+// Creating game over screen
 drawGameOver = () => {
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
@@ -149,6 +149,7 @@ drawGameOver = () => {
     ctx.fillText("GAME OVER, your score is "+ score, canvas.width/2 + 5, canvas.height/2 + 5);
 }
 
+// Creating Event Listener for collision
 window.addEventListener("click", function(e) {
     const detectPixelColor = collisionCtx.getImageData(e.x, e.y, 1, 1);
     //console.log(detectPixelColor);
